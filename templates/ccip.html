@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CCIP </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  <script>
+      function addValue(){
+        var idname = "exampleInputEmail1";
+        s = document.getElementById(idname).value;
+        var pvname ="terminal";
+        document.getElementById(pvname).innerHTML = "$ check " + s;
+      }
+  </script>
+
+</head>
+
+<body>
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Check your IP Address</h2>
+          <form class="form-inline" r ole="form"  method="POST" action="/ccip">
+            <div class="form-group">
+              <input type="search" name="ipaddr" class="form-control" id="InputIPAddress" placeholder="xxx.xxx.xxx.xxx" onKeyUp="addValue()" value="{{ ipaddr }}">
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg" id="SearchButton">Search</button>
+          </form>
+        </div>
+        <!-- /col-lg-6 -->
+        <div class="col-lg-6">
+          <textarea id="terminal" rows="15" cols="40" spellcheck="false" disabled>$ check {{ msg }}
+          </textarea>
+          <!-- <img class="img-responsive" src="img/ipad-hand.png" alt=""> -->
+        </div>
+        <!-- /col-lg-6 -->
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /headerwrap -->
+
+  <div class="container">
+      <div class="row mt centered">
+        <div class="col-lg-6 col-lg-offset-3">
+          <h3>About</h3>
+          <p>
+          This app enable to search cloud platform IPs. Currently Microsoft Azure is included. Other public cloud services are comming soon.<br>
+          You can also download full <a href="https://www.microsoft.com/en-us/download/details.aspx?id=56519">Azure Datacenter IP Ranges</a>.
+          </p>
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+
+  <div id="copyrights">
+    <div class="container">
+      <p>
+        Check Cloud IP Address<br>
+        &copy; Copyrights <strong><a href="https://yonehub.y10e.com/about/">y10e</a></strong>. All Rights Reserved
+      </p>  
+    </div>
+  </div>
+  <!-- / copyrights -->
+
+  <!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='lib/php-mail-form/validate.js')}}"></script>
+  <script src="{{ url_for('static', filename='lib/easing/easing.min.js')}}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>
