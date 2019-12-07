@@ -28,9 +28,9 @@ def checkAzureIp(ipaddr):
 
     for region in json_dict :
         if json_dict[region] is not None:
-            print(region)
+            #print(region)
             for network in json_dict[region]:
-                print(str(network))
+                #print(str(network))
                 nw = ipaddress.ip_network(network)
 
                 for addr in nw:
