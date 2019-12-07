@@ -28,8 +28,9 @@ def checkAzureIp(ipaddr):
 
     for region in json_dict :
         if json_dict[region] is not None:
+            print(region)
             for network in json_dict[region]:
-                #print(str(network))
+                print(str(network))
                 nw = ipaddress.ip_network(network)
 
                 for addr in nw:
@@ -37,11 +38,10 @@ def checkAzureIp(ipaddr):
                         msg += str(ip) + " belongs to " + str(nw) + " in Azure " + str(region).upper() + "." + "\n"
                         msg += "$" + "\n"
                         IsResult = True
-                        print(msg)
                         break
             
-            if msg is not None: break
-        if msg is not None: break
+            if IsResult: break
+        if IsResult: break
     
     if IsResult != True:
         msg += str(ipaddr) + " does not contain Azure Public IP Addresses." + "\n"
