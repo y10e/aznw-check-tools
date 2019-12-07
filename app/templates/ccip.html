@@ -30,7 +30,7 @@
 
   <script>
       function addValue(){
-        var idname = "exampleInputEmail1";
+        var idname = "InputIPAddress";
         s = document.getElementById(idname).value;
         var pvname ="terminal";
         document.getElementById(pvname).innerHTML = "$ check " + s;
@@ -93,7 +93,6 @@
   <!-- JavaScript Libraries -->
   <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js')}}"></script>
   <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{ url_for('static', filename='lib/php-mail-form/validate.js')}}"></script>
   <script src="{{ url_for('static', filename='lib/easing/easing.min.js')}}"></script>
 
   <!-- Template Main Javascript File -->
