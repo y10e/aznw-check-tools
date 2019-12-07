@@ -55,6 +55,10 @@ def checkAzureIp(ipaddr):
 def route():
     return render_template('ccip.html', msg='', ipaddr='')
 
+@app.route("/health", methods=['GET'])
+def health():
+    return render_template('health.html')
+
 @app.route("/ccip", methods=['GET','POST'])
 def ccip():
     if request.method == 'POST':
