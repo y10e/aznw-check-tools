@@ -79,5 +79,5 @@ def ccip():
         return render_template('ccip.html', msg='', ipaddr='')
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(debug=True, host='0.0.0.0', port=80)
 
