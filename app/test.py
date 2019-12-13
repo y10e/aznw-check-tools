@@ -10,3 +10,6 @@ if __name__ == "__main__":
 
     msg = utilities.cloudUtility.CheckGithubIPs("192.30.252.0")
     print(msg)
+
+    msg = utilities.cloudUtility.CheckGCPIPs("8.35.200.0")
+    print(msg)
