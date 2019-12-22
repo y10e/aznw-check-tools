@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Check Your IPs</title>
+  <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+</head>
+<body>
+  remote_addr : {{ remoteAddr }}<br>
+  X-Forwarded-For : {{ xFowarderedFor }}<br>
+  X-Real-IP : {{ xRealIP }}<br>
+  Access_Route : {{ accessRoute }}<br>
+</body>
+</html>
