@@ -6,9 +6,13 @@
   <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
 </head>
 <body>
+  <hr>
   remote_addr : {{ remoteAddr }}<br>
-  X-Forwarded-For : {{ xFowarderedFor }}<br>
-  X-Real-IP : {{ xRealIP }}<br>
   Access_Route : {{ accessRoute }}<br>
+  <hr>
+  HTTP Headers<br>
+  {% for item in headers %}
+    {{ item[0] }} : {{ item[1:] }}  <br>
+  {% endfor %}
 </body>
 </html>

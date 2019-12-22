@@ -37,11 +37,10 @@ def ccip():
 
 @app.route("/cyip", methods=['GET'])
 def cyip():
+    headers = request.headers
     remoteAddr = request.remote_addr
-    xFowarderedFor = request.headers.getlist("X-Forwarded-For")
-    xRealIP = request.headers.getlist("X-Real-IP")
     accessRoute = request.access_route
-    return render_template('cyip.html', remoteAddr=remoteAddr, xFowarderedFor=xFowarderedFor, xRealIP=xRealIP, accessRoute=accessRoute)
+    return render_template('cyip.html', remoteAddr=remoteAddr, accessRoute=accessRoute, headers=headers)
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=80)
