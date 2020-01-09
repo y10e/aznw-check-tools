@@ -45,6 +45,11 @@ def cyip():
 
     return render_template('cyip.html', remoteAddr=remoteAddr, accessRoute=accessRoute, headers=headers,environ=environ_list)
 
+
+@app.route("/.well-known/pki-validation/godaddy.html", methods=['GET'])
+def validateCert():
+    return render_template('godaddy.html')
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=80)
 
